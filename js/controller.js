@@ -37,6 +37,18 @@
      */
     function bindData(jsonData) {
         info = new BindClass('templateSix');
+        console.log("ssds")
+
+        $.ajax({
+          method: "GET",
+          url: 'https://api.darksky.net/forecast/7af51a01e29c8ddb7a548fad3cf35a05/-12.193731,-76.708493',
+        })
+          .done(function( data ) {
+            console.log( "Data Saved: " + data.latitude );
+          });
+
+        
+
         /* Header Div */
         info.set('headerImage', jsonData.headerImage);
         /* Showcase Div */
@@ -133,7 +145,7 @@
      */
     function loadDoc(method, url) {
         var req = new XMLHttpRequest();
-        req.open(method, url, false);
+        req.open(method, url, true);
         req.onload = function () {
             dataSet = JSON.parse(req.responseText);
             bindData(dataSet);
