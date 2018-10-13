@@ -207,11 +207,41 @@ html, body {
 .asideBlockPattern2C3 {
     top: 80px;
     float: left;
-    font: 22px museo-sans-300;
+    font: 19px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
 }
 
+.minmaxtempTitle {
+    top: 12px;
+    font: 19px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+    float: left;
+}
+.minmaxtempTitle tr:first-child td {
+    font-weight: bold;
+    text-align: center;
+}
+.minmaxtempTitle td {
+
+    padding: 4px;
+}
+
+.minTempArray {
+    top: 47px;
+    float: left;
+    font: 19px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+}
+.maxTempArray {
+    top: 80px;
+    float: left;
+    font: 19px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+}
 /* Pattern 2 - 3 Line */
 .NowPlayingImage {
     left:10px;
@@ -371,7 +401,7 @@ html, body {
     position: absolute;
 }
 .weatherMin {
-    margin-left:220px;
+    margin-left:200px;
     top: 0px;
     float: left;
     font: 22px museo-sans-300;
@@ -379,7 +409,7 @@ html, body {
     position: absolute;
 }
 .weatherMax {
-    margin-left: 220px;
+    margin-left: 200px;
      margin-top: 40px;
     top: 0px;
     float: left;

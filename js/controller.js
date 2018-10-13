@@ -41,10 +41,67 @@
 
         $.ajax({
           method: "GET",
-          url: 'https://api.darksky.net/forecast/7af51a01e29c8ddb7a548fad3cf35a05/-12.193731,-76.708493',
+          url: "https://api.darksky.net/forecast/7af51a01e29c8ddb7a548fad3cf35a05/-12.193731,-76.708493?units=si",
+          crossDomain: true,
+          dataType: 'jsonp',
+
         })
           .done(function( data ) {
-            console.log( "Data Saved: " + data.latitude );
+            console.log( "Data Saved: ");
+                 info.set('asideBlock11Content2',  "↑"+Math.round(data.daily.data[0].temperatureMin) + "°C");
+             info.set('asideBlock11Content3', "↓"+Math.round(data.daily.data[0].temperatureMax) + "°C ");
+       
+         
+             function getDayString(number) {
+    switch(number) {
+        case 0:
+            return "Do";
+        case 1:
+            return "Lu";
+      case 2:
+            return "Ma";
+        case 3:
+            return "Mi";
+
+      case 4:
+            return "Ju";
+        case 5:
+            return "Vi";
+
+      case 6:
+            return "Sa";
+
+    }
+}
+
+var html = "";
+
+html += "<tr>"
+for(var i=0; i<7; ++i) {
+    var date = new Date();
+    date.setDate(date.getDate() + i);
+    html += "<td>" + getDayString(date.getDay()) + "</td>";
+}
+html += "</tr>"
+
+
+html += "<tr>"
+for(var i=0; i<7; ++i) {
+    html += "<td>"  +  "↑" +Math.round(data.daily.data[i].temperatureMax) + "°C" + "</td>"
+}
+html += "</tr>"
+
+html += "<tr>"
+for(var i=0; i<7; ++i) {
+    html += "<td>" +  "↓"+ Math.round(data.daily.data[i].temperatureMin) + "°C" + "</td>"
+}
+html += "</tr>"
+
+$("#tablaClima").html(html);
+
+
+        
+
           });
 
         
