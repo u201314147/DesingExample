@@ -425,6 +425,24 @@ html, body {
     color: #FFFFFF;
     position: absolute;
 }
+
+.weatherMinTable {
+    margin-left:-10px;
+    top: 150px;
+    float: left;
+    font: 22px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+}
+.weatherMaxTable {
+    margin-left: -10px;
+     margin-top: 40px;
+    top: 150px;
+    float: left;
+    font: 22px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+}
 .weatherToday2 {
     top: 47px;
     float: left;

@@ -50,41 +50,75 @@
             console.log( "Data Saved: ");
              info.set('asideBlock8Content3',data.currently.icon);
        
-             info.set('asideBlock11Content1', Math.round(data.currently.temperature) + "°C");
+             info.set('asideBlock11Content1', "");
        
-                 info.set('asideBlock11Content2',  changeicon(data.daily.data[0].icon) + "↑"+Math.round(data.daily.data[0].temperatureMax) + "°C");
-             info.set('asideBlock11Content3',  changeicon(data.daily.data[0].icon) + "↓"+Math.round(data.daily.data[0].temperatureMin) + "°C ");
+                 info.set('asideBlock11Content2', "↑"+ changeicon(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMax )) );
+             info.set('asideBlock11Content3',"↓"+ changeicon(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMin )));
        
-            
-             function changeicon(icon) {
+              function changeiconTitle(icon, temp) {
     switch(icon) {
         case "clear-day":
-            return '<i class="fas fa-cloud-sun"></i>';
+            return '<i class="fas fa-cloud-sun">'+ temp + "°C" + '</i>';
         case "clear-night":
-            return '<i class="fas fa-cloud-moon"></i>';
+            return '<i class="fas fa-cloud-moon">'+ temp +"°C" +'</i>';
       case "rain":
-            return '<i class="far fa-umbrella"></i>';
+            return '<i class="far fa-umbrella">'+ temp +"°C" +'</i>';
         case "snow":
-            return '<i class="fas fa-snowflake"></i>';
+            return '<i class="fas fa-snowflake">'+ temp +"°C" +'</i>';
 
       case "sleet":
-            return '<i class="fas fa-stroopwafel"></i>';
+            return '<i class="fas fa-stroopwafel">'+ temp +"°C" +'</i>';
         case "wind":
-            return '<i class="fas fa-wind"></i>';
+            return '<i class="fas fa-wind">'+ temp +"°C" +'</i>';
 
       case "fog":
-            return '<i class="fas fa-cloud"></i>';
+            return '<i class="fas fa-cloud">'+ temp+ "°C" +'</i>';
 
      case "cloudy":
-            return '<i class="fab fa-cloudversify"></i>';
+            return '<i class="fab fa-cloudversify">'+ temp +"°C" +'</i>';
         case "partly-cloudy-day":
-            return '<i class="fab fa-soundcloud"></i>';
+            return '<i class="fab fa-soundcloud">'+ temp+"°C" + '</i>';
 
       case "partly-cloudy-night":
-            return '<i class="fas fa-cloud-moon"></i>';
+            return '<i class="fas fa-cloud-moon">'+ temp +"°C" +'</i>';
 
-   default:
-            return '<i class="fas fa-cloud"></i>';
+      default:
+            return '<i class="fas fa-cloud">'+ temp +"°C" +'</i>';
+    }
+   } 
+
+
+
+            
+             function changeicon(icon, temp) {
+    switch(icon) {
+        case "clear-day":
+            return '<i class="fas fa-cloud-sun">'+ temp + "°" + '</i>';
+        case "clear-night":
+            return '<i class="fas fa-cloud-moon">'+ temp +"°" +'</i>';
+      case "rain":
+            return '<i class="far fa-umbrella">'+ temp +"°" +'</i>';
+        case "snow":
+            return '<i class="fas fa-snowflake">'+ temp +"°" +'</i>';
+
+      case "sleet":
+            return '<i class="fas fa-stroopwafel">'+ temp +"°" +'</i>';
+        case "wind":
+            return '<i class="fas fa-wind">'+ temp +"°" +'</i>';
+
+      case "fog":
+            return '<i class="fas fa-cloud">'+ temp+ "°" +'</i>';
+
+     case "cloudy":
+            return '<i class="fab fa-cloudversify">'+ temp +"°" +'</i>';
+        case "partly-cloudy-day":
+            return '<i class="fab fa-soundcloud">'+ temp+"°" + '</i>';
+
+      case "partly-cloudy-night":
+            return '<i class="fas fa-cloud-moon">'+ temp +"°" +'</i>';
+
+      default:
+            return '<i class="fas fa-cloud">'+ temp +"°" +'</i>';
     }
    } 
              function getDayString(number) {
@@ -122,19 +156,19 @@ html += "</tr>"
 
 html += "<tr>"
 for(var i=0; i<7; ++i) {
-    html += "<td>"  +  changeicon(data.daily.data[i].icon)  +Math.round(data.daily.data[i].temperatureMax) + "°C" + "</td>"
+    html += "<td>"  + changeicon(data.daily.data[i].icon,Math.round(data.daily.data[i].temperatureMax )) + "</td>"
 }
 html += "</tr>"
 
 html += "<tr>"
 for(var i=0; i<7; ++i) {
-    html += "<td>" +  changeicon(data.daily.data[i].icon) + Math.round(data.daily.data[i].temperatureMin) + "°C" + "</td>"
+    html += "<td>" +  changeicon(data.daily.data[i].icon, Math.round(data.daily.data[i].temperatureMin))  + "</td>"
 }
 
 
 $("#tablaClima").html(html);
 
-var html2 = changeicon(data.currently.icon);
+var html2 = changeiconTitle(data.currently.icon, Math.round(data.currently.temperature));
 $("#logoClima").html(html2);
 
           });

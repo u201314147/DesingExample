@@ -46,13 +46,13 @@
     "asideBlock7Content2": "",
     "asideBlock7Content3": "",
 
-    "asideBlock8Content1": "",
-    "asideBlock8Content2": "",
+    "asideBlock8Content1": "↑",
+    "asideBlock8Content2": "↓ ",
     "asideBlock8Content3": "icon",
 
-    "asideBlock11Content1": "15°C",
-    "asideBlock11Content2": "↑ 17°C",
-    "asideBlock11Content3": "↓ 13°C",
+    "asideBlock11Content1": "??°C",
+    "asideBlock11Content2": "↑ ??°C",
+    "asideBlock11Content3": "↓ ??°C",
 
     "asideBlock12Content1": "Vi. . . Sa. . . Do. . Lu. . Ma. . .Mi. . Ju. . . Vi",
     "asideBlock12Content2": "16 . . 15 . . 15 . . 16 . . 17 . . 17 . . 16",
