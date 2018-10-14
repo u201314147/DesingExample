@@ -392,6 +392,14 @@ html, body {
     position: absolute;
     float: left;
 }
+
+.weatherTodayType {
+    top: 50px;
+    font: 20px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+    float: left;
+}
 .weatherToday1 {
     margin-left: 70px;
     top: 0px;
