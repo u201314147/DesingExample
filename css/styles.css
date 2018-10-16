@@ -387,14 +387,14 @@ html, body {
 
 .weatherTodayLogo {
     top: 0px;
-    font: 50px museo-sans-300;
+    font: 75px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
     float: left;
 }
 
 .weatherTodayType {
-    top: 50px;
+    top: 70px;
     font: 20px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
@@ -409,17 +409,17 @@ html, body {
     position: absolute;
 }
 .weatherMin {
-    margin-left:200px;
-    top: 0px;
+    margin-left:260px;
+    top: 10px;
     float: left;
     font: 22px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
 }
 .weatherMax {
-    margin-left: 200px;
+    margin-left: 260px;
      margin-top: 40px;
-    top: 0px;
+    top: 10px;
     float: left;
     font: 22px museo-sans-300;
     color: #FFFFFF;

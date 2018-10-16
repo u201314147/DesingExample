@@ -35,9 +35,54 @@
      * here, first argument is the name of html tag's attribute value and,
      *             second is the value from javascript Object.
      */
+function init()
+{
+   
+   
+}
+
+
+function updateTime()
+{
+      var dt = new Date();
+      var time = null;
+      if(dt.getMinutes() <10)
+      { 
+        if(dt.getSeconds() <10)
+       time = dt.getHours() + ":0" + dt.getMinutes() +":0" +dt.getSeconds()
+      else
+         time = dt.getHours() + ":0" + dt.getMinutes() +":" +dt.getSeconds()
+       }   
+    else
+      {
+         if(dt.getSeconds() <10)
+       time = dt.getHours() + ":" + dt.getMinutes() +":0" +dt.getSeconds()
+      else
+         time = dt.getHours() + ":" + dt.getMinutes() +":" +dt.getSeconds()
+       
+       } 
+       info.set('asideBlock1Content1', time);
+
+}
     function bindData(jsonData) {
         info = new BindClass('templateSix');
-        console.log("ssds")
+        console.log("ssds");
+
+updateTime();
+
+var date2 = new Date();
+var dateDay = date2.toDateString() + " - " + date2.getDate() +"/"
+                + (date2.getMonth()+1)  + "/" 
+                + date2.getFullYear()
+info.set('asideBlock1Content3', dateDay);
+
+  //  info.set('asideBlock1Content3', jsonData.asideBlock1Content3);
+
+ window.setInterval(updateTime,100);
+
+
+
+
 
         $.ajax({
           method: "GET",
@@ -52,8 +97,8 @@
        
              info.set('asideBlock11Content1', "");
        
-                 info.set('asideBlock11Content2', "↑"+ changeicon(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMax )) );
-             info.set('asideBlock11Content3',"↓"+ changeicon(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMin )));
+                 info.set('asideBlock11Content2', "↑ "+ changeiconTitle(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMax )) );
+             info.set('asideBlock11Content3',"↓ "+ changeiconTitle(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMin )));
        
               function changeiconTitle(icon, temp) {
     switch(icon) {
@@ -91,54 +136,27 @@
 
             
              function changeicon(icon, temp) {
-    switch(icon) {
-        case "clear-day":
-            return '<i class="fas fa-cloud-sun">'+ temp + "°" + '</i>';
-        case "clear-night":
-            return '<i class="fas fa-cloud-moon">'+ temp +"°" +'</i>';
-      case "rain":
-            return '<i class="far fa-umbrella">'+ temp +"°" +'</i>';
-        case "snow":
-            return '<i class="fas fa-snowflake">'+ temp +"°" +'</i>';
-
-      case "sleet":
-            return '<i class="fas fa-stroopwafel">'+ temp +"°" +'</i>';
-        case "wind":
-            return '<i class="fas fa-wind">'+ temp +"°" +'</i>';
-
-      case "fog":
-            return '<i class="fas fa-cloud">'+ temp+ "°" +'</i>';
-
-     case "cloudy":
-            return '<i class="fab fa-cloudversify">'+ temp +"°" +'</i>';
-        case "partly-cloudy-day":
-            return '<i class="fab fa-soundcloud">'+ temp+"°" + '</i>';
-
-      case "partly-cloudy-night":
-            return '<i class="fas fa-cloud-moon">'+ temp +"°" +'</i>';
-
-      default:
-            return '<i class="fas fa-cloud">'+ temp +"°" +'</i>';
-    }
+            return " ..."+temp +"..." ;
+    
    } 
              function getDayString(number) {
     switch(number) {
         case 0:
-            return "Do";
+            return "D";
         case 1:
-            return "Lu";
+            return "L";
       case 2:
-            return "Ma";
+            return "M";
         case 3:
-            return "Mi";
+            return "M";
 
       case 4:
-            return "Ju";
+            return "J";
         case 5:
-            return "Vi";
+            return "V";
 
       case 6:
-            return "Sa";
+            return "S";
 
     }
 }
@@ -195,9 +213,9 @@ $("#logoClima").html(html2);
         info.set('textSectionH4', jsonData.textSectionH4);
         /* Side Div - 8 Blocks */
         // Block 1
-        info.set('asideBlock1Content1', jsonData.asideBlock1Content1);
+       
         info.set('asideBlock1Content2', jsonData.asideBlock1Content2);
-		info.set('asideBlock1Content3', jsonData.asideBlock1Content3);
+
         // Block 2
         info.set('notificationtext', jsonData.notificationtext);
         info.set('notification0text', jsonData.notification0text);
