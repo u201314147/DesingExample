@@ -400,6 +400,15 @@ html, body {
     position: absolute;
     float: left;
 }
+.loginDeGmail{
+    margin-right: -270px;
+    margin-left: 820px;
+    top: 0px;
+    float: left;
+    font: 20px museo-sans-300;
+    color: #FFFFFF;
+    position: absolute;
+}
 .weatherToday1 {
     margin-left: 70px;
     top: 0px;

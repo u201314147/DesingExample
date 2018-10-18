@@ -1,4 +1,4 @@
-App Directory Structure
+	App Directory Structure
 
 	[index.html]
 	The file on which the basic skeleton of an HTML page is built on. File paths to CSS, JS, images and videos are defined on this file.
