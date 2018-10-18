@@ -136,7 +136,7 @@ info.set('asideBlock1Content3', dateDay);
 
             
              function changeicon(icon, temp) {
-            return " ..."+temp +"..." ;
+            return temp;
     
    } 
              function getDayString(number) {
