@@ -92,42 +92,41 @@ info.set('asideBlock1Content3', dateDay);
         })
           .done(function( data ) {
             console.log( "Data Saved: ");
-             info.set('asideBlock8Content3',data.currently.icon);
+          
+             
        
-             info.set('asideBlock11Content1', "");
-       
-                 info.set('asideBlock11Content2', "↑ "+ changeiconTitle(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMax )) );
-             info.set('asideBlock11Content3',"↓ "+ changeiconTitle(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMin )));
+                 info.set('asideBlock11Content2', "↑"+ changeicon2(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMax )) );
+             info.set('asideBlock11Content3',"↓"+ changeicon2(data.daily.data[0].icon, Math.round(data.daily.data[0].temperatureMin )));
        
               function changeiconTitle(icon, temp) {
     switch(icon) {
         case "clear-day":
-            return '<i class="fas fa-cloud-sun">'+ temp + "°C" + '</i>';
+           info.set('asideBlock11Content1',jsonData.climaSunny);
         case "clear-night":
-            return '<i class="fas fa-cloud-moon">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
       case "rain":
-            return '<i class="far fa-umbrella">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaRain);
         case "snow":
-            return '<i class="fas fa-snowflake">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaSunny);
 
       case "sleet":
-            return '<i class="fas fa-stroopwafel">'+ temp +"°C" +'</i>';
+          info.set('asideBlock11Content1',jsonData.climaCloudy);
         case "wind":
-            return '<i class="fas fa-wind">'+ temp +"°C" +'</i>';
+         info.set('asideBlock11Content1',jsonData.climaCloudy);
 
       case "fog":
-            return '<i class="fas fa-cloud">'+ temp+ "°C" +'</i>';
+        info.set('asideBlock11Content1',jsonData.climaCloudy);
 
      case "cloudy":
-            return '<i class="fab fa-cloudversify">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
         case "partly-cloudy-day":
-            return '<i class="fab fa-soundcloud">'+ temp+"°C" + '</i>';
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
 
       case "partly-cloudy-night":
-            return '<i class="fas fa-cloud-moon">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
 
       default:
-            return '<i class="fas fa-cloud">'+ temp +"°C" +'</i>';
+           info.set('asideBlock11Content1',jsonData.climaSunny);
     }
    } 
 
@@ -136,8 +135,13 @@ info.set('asideBlock1Content3', dateDay);
             
              function changeicon(icon, temp) {
             return temp;
-    
+
+            
    } 
+
+        function changeicon2(icon, temp) {
+            return temp +"°C";
+     }
              function getDayString(number) {
     switch(number) {
         case 0:
@@ -185,7 +189,9 @@ for(var i=0; i<7; ++i) {
 
 $("#tablaClima").html(html);
 
-var html2 = changeiconTitle(data.currently.icon, Math.round(data.currently.temperature));
+changeiconTitle(data.currently.icon, Math.round(data.currently.temperature));
+
+var html2 = changeicon2(data.currently.icon, Math.round(data.currently.temperature));
 $("#logoClima").html(html2);
 
           });
@@ -202,6 +208,7 @@ $("#logoClima").html(html2);
         info.set('showcaseContent', jsonData.showcaseContent);
         /* Image Text Overlay */
         info.set('bannerImg', jsonData.bannerImg);
+       
         info.set('NowPlayingImage', jsonData.NowPlayingImage);
         info.set('bannerImgOverlayText', jsonData.bannerImgOverlayText);
         info.set('bannerImgOverlayContent', jsonData.bannerImgOverlayContent);

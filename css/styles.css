@@ -155,22 +155,22 @@ html, body {
 
 /* Side Block */
 .side {
-    left: 1324px;
-    top: 120px;
+    left: 1424px;
+    top: 40px;
     height: 960px;
     width: 496px;
     position: absolute;
 }
 .side2 {
     left: 24px;
-    top: 120px;
+    top: 40px;
     height: 960px;
     width: 496px;
     position: absolute;
 }
 .side3 {
     left: 674px;
-    top: 120px;
+    top: 40px;
     height: 960px;
     width: 496px;
     position: absolute;
@@ -398,7 +398,8 @@ html, body {
 
 .weatherTodayLogo {
     top: 0px;
-    font: 75px museo-sans-300;
+    margin-left: 100px;
+    font: 105px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
     float: left;
@@ -425,7 +426,7 @@ html, body {
     position: absolute;
 }
 .weatherMin {
-    margin-left:260px;
+    margin-left:350px;
     top: 10px;
     float: left;
     font: 22px museo-sans-300;
@@ -433,7 +434,7 @@ html, body {
     position: absolute;
 }
 .weatherMax {
-    margin-left: 260px;
+    margin-left: 350px;
      margin-top: 40px;
     top: 10px;
     float: left;
