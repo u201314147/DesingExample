@@ -37,8 +37,7 @@
      */
 function init()
 {
-   
-   
+
 }
 
 
