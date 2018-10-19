@@ -62,14 +62,15 @@
                       <div class="weatherTodayLogo" id ="logoClima"></div>   
                  <img data-bind-templateSix="asideBlock11Content1" />
       
-            
+             
                 <div class="weatherMin" data-bind-templateSix="asideBlock11Content2"></div>
                 <div class="weatherMax" data-bind-templateSix="asideBlock11Content3"></div>
 
     
             </div>
             <div class="asideBlock">
-             
+                  <img  class="minmaxtempTitleBorder" data-bind-templateSix="borderClima" />
+      
                 <TABLE class="minmaxtempTitle" id ="tablaClima"></TABLE>                
             </div>
             <div class="asideBlock">
@@ -190,7 +191,7 @@
         <div class="side3">
              <div class ="loginDeGmail">
                 
-    <!-- <div id="container">
+   <div id="container">
      <h3>FirebaseUI Demo</h3>
       <div id="loading">Loading...</div>
       <div id="loaded" class="hidden">
@@ -237,7 +238,9 @@
         </div>
       </div> 
     </div>
-    <script src="app.js"></script>-->
+    <script src="app.js"></script>
+
+
 
         <p>Trabajando con API de Google Calendar v4</p>
 
@@ -245,7 +248,7 @@
     <button id="signout-button" style="display: none;">Exit</button>
     <button id="add-event-button" style="display: none;">New Event</button>
 
-    <pre id="content"></pre>
+    <pre class=loginDeGmail id="content"></pre>
 
     <script type="text/javascript">
    
@@ -286,6 +289,7 @@
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
       addEventButton.style.display = 'block';
+
           // carga los eventos
           listUpcomingEvents();
         } else {
@@ -377,7 +381,11 @@
               if (!when) {
                 when = event.start.date;
               }
-              appendPre(event.summary + ' (' + when + ')')
+
+              var d = new Date(when);
+                var time = d.toLocaleString();
+                
+              appendPre(event.summary + ' (' + time + ')')
             }
           } else {
             appendPre('Su calendario no tiene eventos :(');

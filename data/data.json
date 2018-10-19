@@ -12,6 +12,7 @@
     "climaCloudy": "res/images/weather_cloudy.png",
     "climaRain": "res/images/weather_rain.png",
     "climaSunny": "res/images/weather_sunny.png",
+    "borderClima": "res/images/border.png",
     "bannerImgOverlayText": "OVERLAY SUB-TITLE",
     "bannerImgOverlayContent": "OVERLAY CONTENT",
     "textSectionH1": "MAIN-HEADER2-1",

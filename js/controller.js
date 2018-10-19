@@ -197,7 +197,7 @@ $("#logoClima").html(html2);
           });
 
         
-
+        info.set('borderClima',jsonData.borderClima);
         /* Header Div */
         info.set('headerImage', jsonData.headerImage);
         /* Showcase Div */

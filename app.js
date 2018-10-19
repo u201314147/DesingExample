@@ -47,7 +47,7 @@ function getUiConfig() {
         // Required to enable ID token credentials for this provider.
         clientId: CLIENT_ID
       },
-      {
+      /*   {
         provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
         scopes :[
           'public_profile',
@@ -68,7 +68,7 @@ function getUiConfig() {
         recaptchaParameters: {
           size: getRecaptchaMode()
         }
-      },
+      },*/
       firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
     ],
     // Terms of service url.
