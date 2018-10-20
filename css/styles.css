@@ -169,8 +169,8 @@ html, body {
     position: absolute;
 }
 .side3 {
-    left: 674px;
-    top: 40px;
+    left: 62px;
+    top: 290px;
     height: 960px;
     width: 496px;
     position: absolute;
@@ -421,6 +421,11 @@ html, body {
 }
 .loginDeGmail{
     font: 20px museo-sans-300;
+    color: #FFFFFF;
+
+}
+.loginDeGmail2{
+    font: 17px museo-sans-300;
     color: #FFFFFF;
 
 }

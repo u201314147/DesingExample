@@ -1,4 +1,4 @@
-/*global BindClass */
+    /*global BindClass */
 /*jslint browser: true, indent: 4*/
 
 /**
@@ -40,7 +40,38 @@ function init()
 
 }
 
+ function darFormatoAldia(day,month,year) {
+    var formato ="";
+    switch(day) {
+        case "clear-day":
+           info.set('asideBlock11Content1',jsonData.climaSunny);
+        case "clear-night":
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
+      case "rain":
+           info.set('asideBlock11Content1',jsonData.climaRain);
+        case "snow":
+           info.set('asideBlock11Content1',jsonData.climaSunny);
 
+      case "sleet":
+          info.set('asideBlock11Content1',jsonData.climaCloudy);
+        case "wind":
+         info.set('asideBlock11Content1',jsonData.climaCloudy);
+
+      case "fog":
+        info.set('asideBlock11Content1',jsonData.climaCloudy);
+
+     case "cloudy":
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
+        case "partly-cloudy-day":
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
+
+      case "partly-cloudy-night":
+           info.set('asideBlock11Content1',jsonData.climaCloudy);
+
+      default:
+           info.set('asideBlock11Content1',jsonData.climaSunny);
+    }
+   } 
 function updateTime()
 {
       var dt = new Date();
@@ -69,10 +100,27 @@ function updateTime()
 
 updateTime();
 
-var date2 = new Date();
-var dateDay = date2.toDateString() + " - " + date2.getDate() +"/"
-                + (date2.getMonth()+1)  + "/" 
-                + date2.getFullYear()
+var meses = [
+  "Enero", "Febrero", "Marzo",
+  "Abril", "Mayo", "Junio", "Julio",
+  "Agosto", "Septiembre", "Octubre",
+  "Noviembre", "Diciembre"
+]
+   var dias=["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"];
+
+var date = new Date();
+var dia = date.getDate();
+var mes = date.getMonth();
+var yyy = date.getFullYear();
+var fecha_formateada = dias[date.getUTCDay()]+', ' + dia + ' de ' + meses[mes];
+
+
+
+
+
+var dateDay = fecha_formateada;
+
+
 info.set('asideBlock1Content3', dateDay);
 
   //  info.set('asideBlock1Content3', jsonData.asideBlock1Content3);
