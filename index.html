@@ -77,7 +77,7 @@
 
 
 <!-- Comienza planes-->
-            <div class="asideBlock2">
+            <div id="pendientes" class="asideBlock2" >
 
               <div class="asideBlockMini">
             <label class="DayPlanLight" data-bind-templateSix="asideBlock13Content2"></label> 
@@ -307,7 +307,7 @@
           authorizeButton.style.display = 'none';
          // signoutButton.style.display = 'block';
      // addEventButton.style.display = 'block';
-
+ document.getElementById('pendientes').style.display = 'none';
           // carga los eventos
           listUpcomingEvents();
         } else {
