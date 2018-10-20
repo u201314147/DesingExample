@@ -63,12 +63,20 @@
     "asideBlock12Content3": "14 . . 13 . . 14 . . 14 . . 13 . . 14 . . 13",
 
     "asideBlock13Content1": "",
-    "asideBlock13Content2": "",
-    "asideBlock13Content3": "",
+    "asideBlock13Content2": "En 15 minutos",
+    "asideBlock13Content3": "En dos horas",
 
-    "asideBlock14Content1": "",
-    "asideBlock14Content2": "",
-    "asideBlock14Content3": "",
+    "asideBlock14Content1": "Hoy 5 PM",
+    "asideBlock14Content2": "Hoy 9 PM",
+    "asideBlock14Content3": "Mañana 10 AM",
+
+    "asideBlock13Content2X": "Lonche con mamá",
+    "asideBlock13Content3X": "Junta con jefatura",
+
+    "asideBlock14Content1X": "Cita peluquería",
+    "asideBlock14Content2X": "Boda Luis & Miguel",
+    "asideBlock14Content3X": "Desayuno Oficina",
+
 
     "asideBlock15Content1": "Pendientes",
     "asideBlock15Content2": "☒ Coordinar reunión empleados - Hoy",
