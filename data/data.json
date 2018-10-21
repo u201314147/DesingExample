@@ -24,34 +24,50 @@
     "asideBlock1Content2": "",
     "asideBlock1Content3": "Viernes, 21 de Setiembre",
 
-    "notificationtext": "Juan Gomez te etiquetó en una foto que apareces - Hace 18 minutos",
-    "notification0text": "Michael Perez ha publicado despues de mucho tiempo - Hace 20 minutos",
-    "notification1text": "Amelia Earhart te etiquetó en una foto que apareces - Hace 32 minutos",
-    "notification2text": "Chris Hadfield comentó en tu estado - Hace 2 horas",
-    "notification3text": "Edwin retuitió tu publicación - Ayer a las 9 PM",
-    "notification4text": "Juan retwitteó la publicación de @RPPNOTICIAS - Ayer a las 11 PM",
+    "notification0text": "Juan Gomez",
+    "notification1text": "Michael Perez",
+    "notification2text": "Amelia Earhart",
+    "notification3text": "Chris Hadfield",
+
+    "notification0textX": "te etiquetó en una foto",
+    "notification1textX": "ha publicado despues de mucho tiempo",
+    "notification2textX": "te etiquetó en una foto",
+    "notification3textX": "comentó en tu estado",
+   
+     "notification0textY": "Hace 18 minutos",
+    "notification1textY": "Hace 20 minutos",
+    "notification2textY": "Hace 32 minutos",
+    "notification3textY": "Hace 2 horas",
 
     "asideBlock3Content2": "",
     "asideBlock3Content3": "",
 
-    "asideBlock4Content1": "WESTIN",
+    "asideBlock4Content1": "Hilton",
 	"asideBlock4Content2": "Hotel & Resorts Room Services",
 
-    "asideBlock4Content3": "Almuerzo Buffet Criollo",
-    "asideBlock5Content1": "Transporte Solicitar Taxi",
-    "asideBlock5Content2": "Spa Reservar sesión de masajes",
-    "asideBlock5Content3": "VOD The Martin ya disponible",
+    "asideBlock4Content3": "Almuerzo",
+    "asideBlock5Content1": "Transporte",
+    "asideBlock5Content2": "Spa",
+    "asideBlock5Content3": "VOD",
 
-    "asideBlock6Content1": "Mirror mirror",
-    "asideBlock6Content2": "para acceder",
-    "asideBlock6Content3": "al comando de voz",
 
-    "asideBlock7Content1": "",
-    "asideBlock7Content2": "",
-    "asideBlock7Content3": "",
+    "asideBlock4Content3X": "Buffet Criollo",
+    "asideBlock5Content1X": "Solicitar Taxi",
+    "asideBlock5Content2X": "Reservar sesión de masajes",
+    "asideBlock5Content3X": "The Martin ya disponible",
 
-    "asideBlock8Content1": "↑",
-    "asideBlock8Content2": "↓ ",
+
+    "asideBlock6Content0": "Noticias",
+    "asideBlock6Content1": "El Comercio",
+    "asideBlock6Content2": "NYTimes",
+    "asideBlock6Content3": "La Republica",
+    "asideBlock7Content1": "Gestión",
+
+    "asideBlock7Content2": "Fiscal formaliza el pedido de",
+    "asideBlock7Content3": "Justice Dept. Accuses Russian",
+
+    "asideBlock8Content1": "Keiko Fujimori: Odebretch",
+    "asideBlock8Content2": "Defensa de Keiko Fujimori no ha ",
     "asideBlock8Content3": "icon",
 
     "asideBlock11Content1": "??°C",

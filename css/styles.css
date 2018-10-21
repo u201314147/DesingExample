@@ -10,15 +10,15 @@ html, body {
 /* Fonts */
 
 @font-face {
-    font-family: museo-sans-700;
+    font-family: museo-sans-300;
     src: url('../fonts/Bryant/Bryant-Light.otf');
 }
 @font-face {
-    font-family: museo-sans-500;
+    font-family: museo-sans-700;
     src: url('../fonts/Bryant/Bryant-Bold.otf');
 }
 @font-face {
-    font-family: museo-sans-300;
+    font-family: museo-sans-500;
     src: url('../fonts/Bryant/Bryant-Medium.otf');
 }
 @font-face {
@@ -204,9 +204,31 @@ html, body {
     position: relative;
     margin-left: 45px;
 }
+.asideBlock5 {
+    top: 125px;
+    height: 115px;
+    width: 416px;
+    position: relative;
+    margin-left: -40px;
+}
+.asideBlock6 {
+    top: 145px;
+    height: 115px;
+    width: 416px;
+    position: relative;
+    margin-left: -50px;
+}
+.asideBlock7 {
+    top: 155px;
+    height: 115px;
+    width: 516px;
+    position: relative;
+    margin-left: -50px;
+}
 .asideBlockMini {
-    height: 40px;
+    height: 10px;
     margin-left: 40px;
+     position: relative;
 }
 /* Pattern 1 - 2 Line */
 .asideBlockPattern1C1 {
@@ -386,14 +408,35 @@ html, body {
 
 /* Pattern 2 - 3 Line */
 .DayPlanBold {
-    font: 22px museo-sans-300;
+    font: 24px museo-sans-700;
     color: #FFFFFF;
     float: left;
 }
 .DayPlanLight {
-    font: 22px museo-sans-700;
+    font: 24px museo-sans-300;
     color: #FFFFFF;
     float: left;
+}
+.DayPlanMedium {
+    font: 24px museo-sans-500;
+    color: #FFFFFF;
+    float: left;
+}
+.DayPlanBoldAbsolute {
+    font: 24px museo-sans-700;
+    color: #FFFFFF;
+    float: right;
+}
+.DayPlanLightAbsolute {
+    font: 24px museo-sans-300;
+    color: #FFFFFF;
+    float: right;
+}
+.DayPlanMediumAbsolute {
+    font: 24px museo-sans-500;
+    color: #FFFFFF;
+    float: right;
+    
 }
 .DayPlanItem1 {
     top: 47px;
@@ -434,7 +477,7 @@ html, body {
 .weatherTodayLogo {
     top: 0px;
     margin-left: 100px;
-    font: 90px museo-sans-300;
+    font: 90px museo-sans-700;
     color: #FFFFFF;
     position: absolute;
     float: left;
@@ -467,18 +510,18 @@ html, body {
 }
 .weatherMin {
     margin-left:320px;
-    top: 30px;
+    top: 20px;
     float: left;
-    font: 30px museo-sans-700;
+    font: 30px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
 }
 .weatherMax {
     margin-left: 320px;
      margin-top: 60px;
-    top: 10px;
+    top: 0px;
     float: left;
-    font: 30px museo-sans-700;
+    font: 30px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
 }
@@ -573,19 +616,21 @@ html, body {
     float: left;
 }
 .clock {
-    top: 0px;
-    font: 90px museo-sans-300;
+    top: 30px;
+    font: 122px museo-sans-700;
     color: #FFFFFF;
+    margin-left: -60px;
     position: absolute;
     float: left;
 }
 
 .clockdate {
-    top: 85px;
-    float: left;
-    font: 22px museo-sans-300;
+    top: 145px;
+    float: right;
+     margin-left: -60px;
+    font: 39px museo-sans-300;
     color: #FFFFFF;
-    position: absolute;
+    position: relative;
 }
 .Panel2Title {
     top: 45px;

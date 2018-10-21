@@ -271,12 +271,19 @@ $("#logoClima").html(html2);
         info.set('asideBlock1Content2', jsonData.asideBlock1Content2);
 
         // Block 2
-        info.set('notificationtext', jsonData.notificationtext);
         info.set('notification0text', jsonData.notification0text);
         info.set('notification1text', jsonData.notification1text);
         info.set('notification2text', jsonData.notification2text);
         info.set('notification3text', jsonData.notification3text);
-        info.set('notification4text', jsonData.notification4text);
+         info.set('notification0Xtext', jsonData.notification0textX);
+        info.set('notification1Xtext', jsonData.notification1textX);
+        info.set('notification2Xtext', jsonData.notification2textX);
+        info.set('notification3Xtext', jsonData.notification3textX);
+         info.set('notification0Ytext', jsonData.notification0textY);
+        info.set('notification1Ytext', jsonData.notification1textY);
+        info.set('notification2Ytext', jsonData.notification2textY);
+        info.set('notification3Ytext', jsonData.notification3textY);
+    
 
         info.set('asideBlock3Content2', jsonData.asideBlock3Content2);
         info.set('asideBlock3Content3', jsonData.asideBlock3Content3);
@@ -288,7 +295,16 @@ $("#logoClima").html(html2);
         info.set('asideBlock5Content1', jsonData.asideBlock5Content1);
         info.set('asideBlock5Content2', jsonData.asideBlock5Content2);
         info.set('asideBlock5Content3', jsonData.asideBlock5Content3);
+
+        info.set('asideBlock4Content3X', jsonData.asideBlock4Content3X);
+        // Block 5
+        info.set('asideBlock5Content1X', jsonData.asideBlock5Content1X);
+        info.set('asideBlock5Content2X', jsonData.asideBlock5Content2X);
+        info.set('asideBlock5Content3X', jsonData.asideBlock5Content3X);
+
+        
         // Block 6
+        info.set('asideBlock6Content0', jsonData.asideBlock6Content0);
         info.set('asideBlock6Content1', jsonData.asideBlock6Content1);
         info.set('asideBlock6Content2', jsonData.asideBlock6Content2);
         info.set('asideBlock6Content3', jsonData.asideBlock6Content3);
