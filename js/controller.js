@@ -386,12 +386,12 @@ $("#logoClima").html(html2);
         info.set('asideBlock14Content2', jsonData.asideBlock14Content2);
         info.set('asideBlock14Content3', jsonData.asideBlock14Content3);
 
-          info.set('asideBlock13Content2X', jsonData.asideBlock13Content2X);
-        info.set('asideBlock13Content3X', jsonData.asideBlock13Content3X);
+          info.set('asideBlock13Content2X', jsonData.asideBlock13Content2X + "    .");
+        info.set('asideBlock13Content3X', jsonData.asideBlock13Content3X + "    .");
         // Block 4
-        info.set('asideBlock14Content1X', jsonData.asideBlock14Content1X);
-        info.set('asideBlock14Content2X', jsonData.asideBlock14Content2X);
-        info.set('asideBlock14Content3X', jsonData.asideBlock14Content3X);
+        info.set('asideBlock14Content1X', jsonData.asideBlock14Content1X + "    . ");
+        info.set('asideBlock14Content2X', jsonData.asideBlock14Content2X + "        .");
+        info.set('asideBlock14Content3X', jsonData.asideBlock14Content3X + "    .");
 
 
 
