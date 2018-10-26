@@ -69,7 +69,7 @@ function noti()
          if (noticias.length > 0) {
             for (var i = 0; i < noticias.length; i++) {
               var noti = noticias[i];
-              var desc = noti.description;
+              var desc = noti.title;
               if (!desc) {
                 desc = noti.title;
               }
@@ -296,6 +296,7 @@ $("#logoClima").html(html2);
 
         
         info.set('borderClima',jsonData.borderClima);
+         info.set('logoHilton',jsonData.hiltonlogo);
         /* Header Div */
         info.set('headerImage', jsonData.headerImage);
         /* Showcase Div */

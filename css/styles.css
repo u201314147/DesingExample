@@ -22,6 +22,10 @@ html, body {
     src: url('../fonts/Bryant/Bryant-Medium.otf');
 }
 @font-face {
+    font-family: museo-sans-400;
+    src: url('../fonts/Bryant/Bryant-Regular.otf');
+}
+@font-face {
     font-family: museo-sans-300_c;
     src: url('../fonts/Bryant/Bryant-LightCondensed.otf');
 }
@@ -163,10 +167,10 @@ html, body {
 
 /* Side Block */
 .side {
-    left: 1424px;
+    left: 1414px;
     top: 40px;
     height: 960px;
-    width: 496px;
+    width: 556px;
     position: absolute;
 }
 .side2 {
@@ -429,6 +433,10 @@ html, body {
     font: 24px museo-sans-500;
     color: #FFFFFF;
     float: left;
+}.DayPlanRegular {
+    font: 24px museo-sans-400;
+    color: #FFFFFF;
+    float: left;
 }.DayPlanBoldCondensed {
     font: 24px museo-sans-700_c;
     color: #FFFFFF;
@@ -444,13 +452,18 @@ html, body {
     color: #FFFFFF;
     float: left;
 }
+.DayPlanMediumCondensedExtra {
+    font: 24px museo-sans-500_c;
+    color: #FFFFFF;
+    float: left;
+}
 .DayPlanBoldAbsolute {
     font: 24px museo-sans-700;
     color: #FFFFFF;
     float: right;
 }
 .DayPlanLightAbsolute {
-    font: 18px museo-sans-300;
+    font: 15px museo-sans-300;
     color: #FFFFFF;
     float: right;
 }
@@ -641,7 +654,7 @@ html, body {
     top: 30px;
     font: 122px museo-sans-700_c;
     color: #FFFFFF;
-    margin-left: -120px;
+    margin-left: -20px;
     position: absolute;
     float: right;
 }
@@ -649,7 +662,7 @@ html, body {
 .clockdate {
     top: 145px;
     float: right;
-     margin-left: -80px;
+     margin-left: -20px;
     font: 39px museo-sans-300;
     color: #FFFFFF;
     position: absolute;

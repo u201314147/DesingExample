@@ -21,7 +21,7 @@
     "clima_sunny": "res/images/weather_sunny.png",
     "clima_wind": "res/images/weather_wind.png",
     "borderClima": "res/images/border.png",
-    "hilonlogo": "res/images/border.png",
+    "hiltonlogo": "res/images/hilton_icon.png",
     "bannerImgOverlayText": "OVERLAY SUB-TITLE",
     "bannerImgOverlayContent": "OVERLAY CONTENT",
     "textSectionH1": "MAIN-HEADER2-1",
