@@ -429,6 +429,20 @@ html, body {
     font: 24px museo-sans-500;
     color: #FFFFFF;
     float: left;
+}.DayPlanBoldCondensed {
+    font: 24px museo-sans-700_c;
+    color: #FFFFFF;
+    float: left;
+}
+.DayPlanLightCondensed {
+    font: 24px museo-sans-300_c;
+    color: #FFFFFF;
+    float: left;
+}
+.DayPlanMediumCondensed {
+    font: 24px museo-sans-500_c;
+    color: #FFFFFF;
+    float: left;
 }
 .DayPlanBoldAbsolute {
     font: 24px museo-sans-700;
@@ -436,7 +450,7 @@ html, body {
     float: right;
 }
 .DayPlanLightAbsolute {
-    font: 24px museo-sans-300;
+    font: 18px museo-sans-300;
     color: #FFFFFF;
     float: right;
 }
