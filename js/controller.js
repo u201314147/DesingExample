@@ -44,9 +44,8 @@ function init()
       function appendPre(message) {
    
         var textContent = message + '\n';
-       pre.appendChild(textContent);
           info.set('asideBlock6Content1',textContent);
-           console.log( textContent);
+           console.log(textContent);
       
       }
 
@@ -74,7 +73,7 @@ function noti()
                 desc = noti.title;
               }
 
-        
+                appendPre(desc);
             }
           } else {
             appendPre('No hay noticias');
