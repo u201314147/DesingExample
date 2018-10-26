@@ -40,56 +40,103 @@ function init()
 
 }
 
- function darFormatoAldia(day,month,year) {
-    var formato ="";
-    switch(day) {
-        case "clear-day":
-           info.set('asideBlock11Content1',jsonData.climaSunny);
-        case "clear-night":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
-      case "rain":
-           info.set('asideBlock11Content1',jsonData.climaRain);
-        case "snow":
-           info.set('asideBlock11Content1',jsonData.climaSunny);
 
-      case "sleet":
-          info.set('asideBlock11Content1',jsonData.climaCloudy);
-        case "wind":
-         info.set('asideBlock11Content1',jsonData.climaCloudy);
+      function appendPre(message) {
+   
+        var textContent = message + '\n';
+       pre.appendChild(textContent);
+          info.set('asideBlock6Content1',textContent);
+           console.log( textContent);
+      
+      }
 
-      case "fog":
-        info.set('asideBlock11Content1',jsonData.climaCloudy);
 
-     case "cloudy":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
-        case "partly-cloudy-day":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
+function noti()
+{
+         $.ajax({
+          method: "GET",
+          url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Felcomercio.pe%2Ffeed%2Fgastronomia",
+          crossDomain: true,
+          dataType: 'jsonp',
 
-      case "partly-cloudy-night":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
+        })
+          .done(function( data ) {
+            console.log( "Data Saved: "+data.status);
+      
 
-      default:
-           info.set('asideBlock11Content1',jsonData.climaSunny);
-    }
-   } 
+       var noticias = data.items;
+         
+         if (noticias.length > 0) {
+            for (var i = 0; i < noticias.length; i++) {
+              var noti = noticias[i];
+              var desc = noti.description;
+              if (!desc) {
+                desc = noti.title;
+              }
+
+        
+            }
+          } else {
+            appendPre('No hay noticias');
+          }
+        
+
+      }); 
+
+}
+ 
 function updateTime()
 {
       var dt = new Date();
       var time = null;
+
+
       if(dt.getMinutes() <10)
       { 
-        if(dt.getSeconds() <10)
-       time = dt.getHours() + ":0" + dt.getMinutes() +":0" +dt.getSeconds()
-      else
-         time = dt.getHours() + ":0" + dt.getMinutes() +":" +dt.getSeconds()
+
+         time = dt.getHours() + ":0" + dt.getMinutes() + " AM";
+
+
+    //    if(dt.getSeconds() <10)
+    //   time = dt.getHours() + ":0" + dt.getMinutes() +":0" +dt.getSeconds()
+    //  else
+   //      time = dt.getHours() + ":0" + dt.getMinutes() +":" +dt.getSeconds()
+    if(dt.getHours() == 0)
+        {
+             time = dt.getHours()+12 + ":0" + dt.getMinutes() + " AM";
+        }
+
+         if(dt.getHours() == 12)
+        {
+             time = dt.getHours() + ":0" + dt.getMinutes() + " PM";
+        }
+        if(dt.getHours() > 12)
+        {
+             time = dt.getHours()-12 + ":0" + dt.getMinutes() + " PM";
+        }
        }   
     else
       {
-         if(dt.getSeconds() <10)
-       time = dt.getHours() + ":" + dt.getMinutes() +":0" +dt.getSeconds()
-      else
-         time = dt.getHours() + ":" + dt.getMinutes() +":" +dt.getSeconds()
-       
+
+          time = dt.getHours() + ":" + dt.getMinutes() + " AM";
+
+
+         //if(dt.getSeconds() <10)
+    //   time = dt.getHours() + ":" + dt.getMinutes() +":0" +dt.getSeconds()
+    //  else
+    //     time = dt.getHours() + ":" + dt.getMinutes() +":" +dt.getSeconds()
+     if(dt.getHours() == 0)
+        {
+             time = dt.getHours()+12 + ":" + dt.getMinutes() + " AM";
+        }
+     if(dt.getHours() == 12)
+        {
+             time = dt.getHours() + ":" + dt.getMinutes() + " PM";
+        }
+       if(dt.getHours() > 12)
+        {
+             time = dt.getHours()-12 + ":" + dt.getMinutes() + " PM";
+        }
        } 
        info.set('asideBlock1Content1', time);
 
@@ -99,7 +146,10 @@ function updateTime()
         console.log("ssds");
 
 updateTime();
+//WEA
 
+noti();
+//WEA
 var meses = [
   "Enero", "Febrero", "Marzo",
   "Abril", "Mayo", "Junio", "Julio",
@@ -148,33 +198,28 @@ info.set('asideBlock1Content3', dateDay);
        
               function changeiconTitle(icon, temp) {
     switch(icon) {
-        case "clear-day":
-           info.set('asideBlock11Content1',jsonData.climaSunny);
+       case "clear-day":
+           info.set('asideBlock11Content1',jsonData.clima_clear);
         case "clear-night":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
-      case "rain":
-           info.set('asideBlock11Content1',jsonData.climaRain);
-        case "snow":
-           info.set('asideBlock11Content1',jsonData.climaSunny);
-
-      case "sleet":
-          info.set('asideBlock11Content1',jsonData.climaCloudy);
-        case "wind":
-         info.set('asideBlock11Content1',jsonData.climaCloudy);
-
-      case "fog":
-        info.set('asideBlock11Content1',jsonData.climaCloudy);
-
-     case "cloudy":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
+           info.set('asideBlock11Content1',jsonData.clima_clearnight);
+        case "cloudy":
+           info.set('asideBlock11Content1',jsonData.clima_cloudy);
+        case "fog":
+        info.set('asideBlock11Content1',jsonData.clima_fog);
         case "partly-cloudy-day":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
-
-      case "partly-cloudy-night":
-           info.set('asideBlock11Content1',jsonData.climaCloudy);
-
+           info.set('asideBlock11Content1',jsonData.clima_partlycloudy);
+        case "partly-cloudy-night":
+           info.set('asideBlock11Content1',jsonData.clima_partlycloudynight);
+        case "rain":
+           info.set('asideBlock11Content1',jsonData.clima_rain);
+        case "sleet":
+          info.set('asideBlock11Content1',jsonData.clima_sleet);
+        case "snow":
+           info.set('asideBlock11Content1',jsonData.clima_snow);
+        case "wind":
+         info.set('asideBlock11Content1',jsonData.clima_wind);
       default:
-           info.set('asideBlock11Content1',jsonData.climaSunny);
+           info.set('asideBlock11Content1',jsonData.clima_sunny);
     }
    } 
 

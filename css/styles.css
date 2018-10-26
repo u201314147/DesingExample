@@ -22,8 +22,16 @@ html, body {
     src: url('../fonts/Bryant/Bryant-Medium.otf');
 }
 @font-face {
-    font-family: "Bryant";
-    src: url('../fonts/Bryant/Bryant-Bold.otf');
+    font-family: museo-sans-300_c;
+    src: url('../fonts/Bryant/Bryant-LightCondensed.otf');
+}
+@font-face {
+    font-family: museo-sans-700_c;
+    src: url('../fonts/Bryant/Bryant-BoldCondensed.otf');
+}
+@font-face {
+    font-family: museo-sans-500_c;
+    src: url('../fonts/Bryant/Bryant-MediumCondensed.otf');
 }
 /* Styling */
 
@@ -617,20 +625,20 @@ html, body {
 }
 .clock {
     top: 30px;
-    font: 122px museo-sans-700;
+    font: 122px museo-sans-700_c;
     color: #FFFFFF;
-    margin-left: -60px;
+    margin-left: -120px;
     position: absolute;
-    float: left;
+    float: right;
 }
 
 .clockdate {
     top: 145px;
     float: right;
-     margin-left: -60px;
+     margin-left: -80px;
     font: 39px museo-sans-300;
     color: #FFFFFF;
-    position: relative;
+    position: absolute;
 }
 .Panel2Title {
     top: 45px;
