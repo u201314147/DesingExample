@@ -339,7 +339,7 @@ $("#logoClima").html(html2);
         info.set('asideBlock3Content2', jsonData.asideBlock3Content2);
         info.set('asideBlock3Content3', jsonData.asideBlock3Content3);
         // Block 4
-        info.set('asideBlock4Content1', jsonData.asideBlock4Content1);
+        info.set('asideBlock4Content1',jsonData.asideBlock4Content1);
         info.set('asideBlock4Content2', jsonData.asideBlock4Content2);
 		info.set('asideBlock4Content3', jsonData.asideBlock4Content3);
         // Block 5

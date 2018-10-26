@@ -170,7 +170,7 @@ html, body {
     left: 1414px;
     top: 40px;
     height: 960px;
-    width: 556px;
+    width: 496px;
     position: absolute;
 }
 .side2 {
@@ -200,7 +200,7 @@ html, body {
     height: 115px;
     width: 416px;
     position: relative;
-    margin-left: 5px;
+    margin-left: 45px;
 }
 .asideBlock3 {
     top: 55px;
@@ -221,25 +221,20 @@ html, body {
     height: 115px;
     width: 416px;
     position: relative;
-    margin-left: -40px;
 }
 .asideBlock6 {
-    top: 145px;
+    top: 185px;
     height: 115px;
     width: 416px;
     position: relative;
-    margin-left: -50px;
 }
 .asideBlock7 {
-    top: 155px;
+    top: 285px;
     height: 115px;
-    width: 516px;
+    width: 916px;
     position: relative;
-    margin-left: -50px;
 }
 .asideBlockMini {
-    height: 10px;
-    margin-left: 40px;
      position: relative;
 }
 /* Pattern 1 - 2 Line */
@@ -654,7 +649,7 @@ html, body {
     top: 30px;
     font: 122px museo-sans-700_c;
     color: #FFFFFF;
-    margin-left: -20px;
+    margin-left: -40px;
     position: absolute;
     float: right;
 }
