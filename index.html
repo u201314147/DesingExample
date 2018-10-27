@@ -444,6 +444,50 @@
         pre.appendChild(textContent);
       }
 
+      function countdown(fechaevento){
+   var fecha = new Date();
+   fecha = fechaevento;
+    var hoy=new Date()
+    var dias=0
+    var horas=0
+    var minutos=0
+    var segundos=0
+    
+    var date1 = new Date(fechaevento);
+  
+        var diferencia=( date1.getTime() - hoy.getTime())/1000
+        dias=Math.floor(diferencia/86400)
+        diferencia=diferencia-(86400*dias)
+        horas=Math.floor(diferencia/3600)
+        diferencia=diferencia-(3600*horas)
+        minutos=Math.floor(diferencia/60)
+        diferencia=diferencia-(60*minutos)
+        segundos=Math.floor(diferencia)
+
+      
+      console.log(hoy + "-" +fechaevento);
+      var fecha = ""
+
+
+      if(segundos> 0)
+        fecha = 'Quedan '+ segundos + ' segundos :';
+          if(minutos> 0)
+        fecha = 'Quedan '+ minutos + ' minutos :';
+          if(horas> 0)
+          {
+            if( date1.getHours()>12)
+            fecha = 'Hoy a las '+ date1.getHours() + ' PM :';
+          else
+             fecha = 'Hoy a las '+ date1.getHours() + ' AM :';
+          }
+        if(dias> 0)
+        fecha = 'En '+ dias + ' Dias :';
+  
+        return fecha;
+
+    
+}
+
       function listUpcomingEvents() {
         gapi.client.calendar.events.list({
           'calendarId': 'primary',
@@ -460,15 +504,17 @@
             for (i = 0; i < events.length; i++) {
               var event = events[i];
               var when = event.start.dateTime;
+               
               if (!when) {
                 when = event.start.date;
+              
               }
 
               var d = new Date(when);
-                var time = d.toLocaleString();
-                
+                var time = d.toLocaleString("en-US");
+                 var xd = countdown(time);
 
-              appendPre(event.summary + ' (' + time + ')')
+              appendPre(xd + event.summary)
             }
           } else {
             appendPre('Su calendario no tiene eventos :(');
