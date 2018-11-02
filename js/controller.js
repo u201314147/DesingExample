@@ -50,6 +50,50 @@ function init()
       
       }
 
+function getCurrency(from, to, textdesign)
+{
+    $.ajax({
+           headers: { 
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+                    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+                    'content-type': 'application/json; charset=UTF-8'
+
+                    },
+
+          method: "GET",
+          url: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey=2AS9DR6NX2GY2SW5",
+          crossDomain: true,
+          dataType: 'jsonp',
+
+        })
+          .done(function( data ) {
+            console.log( "currency: "+data.status);
+      
+             var value = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+
+            info.set(textdesign, from + " " + value);
+
+      }); 
+
+     var text = '{'+
+        '"Realtime Currency Exchange Rate": {'+
+        '"1. From_Currency Code": "USD",'+
+        '"2. From_Currency Name": "United States Dollar",'+
+        '"3. To_Currency Code": "PEN",'+
+        '"4. To_Currency Name": "Peruvian Nuevo Sol",'+
+        '"5. Exchange Rate": "3.35550000",'+
+        '"6. Last Refreshed": "2018-11-02 17:56:53",'+
+        '"7. Time Zone": "UTC"'+
+        '}'+
+        '}'
+        var obj = JSON.parse(text);
+          // console.log(obj["Realtime Currency Exchange Rate"]["5. Exchange Rate"]);
+            var value = obj["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+
+            info.set(textdesign, from + " " + value);
+}
 
 function noti()
 {
@@ -155,6 +199,10 @@ updateTime();
 
 noti();
 //WEA
+
+getCurrency("USD","PEN", "asideBlock15Content3");
+getCurrency("EUR","PEN", "asideBlock16Content2");
+
 var meses = [
   "Enero", "Febrero", "Marzo",
   "Abril", "Mayo", "Junio", "Julio",
@@ -398,10 +446,10 @@ $("#logoClima").html(html2);
         // Block 5
         info.set('asideBlock15Content1', jsonData.asideBlock15Content1);
         info.set('asideBlock15Content2', jsonData.asideBlock15Content2);
-        info.set('asideBlock15Content3', jsonData.asideBlock15Content3);
+       // info.set('asideBlock15Content3', jsonData.asideBlock15Content3);  CURRENCY
         // Block 6
         info.set('asideBlock16Content1', jsonData.asideBlock16Content1);
-        info.set('asideBlock16Content2', jsonData.asideBlock16Content2);
+      //  info.set('asideBlock16Content2', jsonData.asideBlock16Content2);   CURRENCY2
         info.set('asideBlock16Content3', jsonData.asideBlock16Content3);
         // Block 7
         info.set('asideBlock17Content1', jsonData.asideBlock17Content1);
