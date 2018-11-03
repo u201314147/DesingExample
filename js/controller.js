@@ -53,31 +53,58 @@ function init()
 function getCurrency(from, to, textdesign)
 {
     $.ajax({
-           headers: { 
-                    'content-type': 'application/x-www-form-urlencoded',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-                    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-                    'content-type': 'application/json; charset=UTF-8'
-
-                    },
-
           method: "GET",
-          url: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey=2AS9DR6NX2GY2SW5",
+         //url: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey=2AS9DR6NX2GY2SW5",
+          url: 'https://marketdata.websol.barchart.com/getQuote.json?apikey=f40b136c6dc4451f9136bb53b9e70ffa&symbols=ZC*1,IBM,GOOGL,ADES,EEUU,ADES,ASIX,AEGN,AMTX,APD,AKS,AIN,ALB,ATI,AMRK,AMRC,AVD,AMWD,AMRS,AQMS,RKDA,AGX,ATIS,ATISW,AXTA,%5EEURUSD',
+         
           crossDomain: true,
-          dataType: 'jsonp',
-
+          dataType: 'json',
+          async:true,
+        
         })
           .done(function( data ) {
-            console.log( "currency: "+data.status);
+                     //  console.log( "currency: "+data.results[0].symbol)
       
-             var value = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+            var results1 = data.results;
+            var full = ""
+           for (var i = 0; i < results1.length; i++) {
+//                  console.log( "currency: "+data.results[i].symbol)
 
-            info.set(textdesign, from + " " + value);
+                  var open1 = data.results[i].open
+
+                  var close1 = data.results[i].close
+                  var result = (Math.round(close1*100 -  open1*100))/100  
+              
+                  if(result> 0)
+                  {
+                    result =  '<p style="color: green; display:inline;">↑</p>'+ result
+                  }
+                  else if(result == 0)
+                  {
+                    result =  '<p style="color: blue; display:inline;">-</p>' + result
+                  }
+                  else if(result < 0)
+                  {
+                     result ='<p style="color: red; display:inline;">↓</p>' + Math.abs(result)
+                  }
+                 //  console.log(result)
+
+                   full = full + data.results[i].symbol + result + " "
+
+
+              }
+              $("#111").html('<marquee scrollamount="2" direction="right" scrolldelay="70" behavior="scroll">'+full+'</marquee>');
+              $("#222").html('<marquee scrollamount="2" direction="right" scrolldelay="70" behavior="scroll">'+full+'</marquee>');
+         //   info.set(textdesign, full);
+              console.log(full)
+
+           //var value = data["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+
+          //info.set(textdesign, from + " " + value);
 
       }); 
 
-     var text = '{'+
+   /*  var text = '{'+
         '"Realtime Currency Exchange Rate": {'+
         '"1. From_Currency Code": "USD",'+
         '"2. From_Currency Name": "United States Dollar",'+
@@ -92,7 +119,7 @@ function getCurrency(from, to, textdesign)
           // console.log(obj["Realtime Currency Exchange Rate"]["5. Exchange Rate"]);
             var value = obj["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
 
-            info.set(textdesign, from + " " + value);
+            info.set(textdesign, from + " " + value);*/
 }
 
 function noti()
