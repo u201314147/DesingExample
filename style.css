@@ -6,6 +6,12 @@ body {
   margin: 0;
 }
 
+.block-l-1{
+ border: 1px solid yellow;
+ width: 462px;
+ height: 258px;
+}
+
 #container {
   max-width: 600px;
   margin: 0 auto;

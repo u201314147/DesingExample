@@ -3,39 +3,33 @@
     margin: 0px;
     padding: 0px;
 }
-html, body {
-    width: 1920px;
-    height: 1080px;
-}
+
+
 /* Fonts */
 
 @font-face {
-    font-family: museo-sans-300;
-    src: url('../fonts/Bryant/Bryant-Light.otf');
-}
-@font-face {
-    font-family: museo-sans-700;
+    font-family: "b-bold";
     src: url('../fonts/Bryant/Bryant-Bold.otf');
 }
 @font-face {
-    font-family: museo-sans-500;
-    src: url('../fonts/Bryant/Bryant-Medium.otf');
-}
-@font-face {
-    font-family: museo-sans-400;
-    src: url('../fonts/Bryant/Bryant-Regular.otf');
-}
-@font-face {
-    font-family: museo-sans-300_c;
-    src: url('../fonts/Bryant/Bryant-LightCondensed.otf');
-}
-@font-face {
-    font-family: museo-sans-700_c;
+    font-family: "b-bold-condensed";
     src: url('../fonts/Bryant/Bryant-BoldCondensed.otf');
 }
 @font-face {
-    font-family: museo-sans-500_c;
-    src: url('../fonts/Bryant/Bryant-MediumCondensed.otf');
+    font-family: "b-regular";
+    src: url('../fonts/Bryant/Bryant-Regular.otf');
+}
+@font-face {
+    font-family: "b-medium";
+    src: url('../fonts/Bryant/Bryant-Medium.otf');
+}
+@font-face {
+    font-family: "b-light";
+    src: url('../fonts/Bryant/Bryant-Light.otf');
+}
+@font-face {
+    font-family: "b-light-condensed";
+    src: url('../fonts/Bryant/Bryant-LightCondensed.otf');
 }
 /* Styling */
 
@@ -56,9 +50,9 @@ html, body {
 
 /* Page */
 .content {
-    height: 1000px;
+    height: 1080px;
     width: 1920px;
-    background-color: #fff;
+    background-color: black;
 }
 
 /* Main Showcase */
@@ -165,31 +159,54 @@ html, body {
     position: absolute;
 }
 
+.block-side {
+    border: 1px solid transparent;
+    height: 258px;
+    width: 460px;      
+
+}
+.NowNewsImage {
+    left:10px;
+    top: 840px;
+    font: 22px museo-sans-300;
+    height: 100px;
+    width: 100px;
+    color: #FFFFFF;
+    position: absolute;
+    margin-top: -20px;
+    float: left;
+    margin-left: 25px;
+}
+
+.borderCurrentDay {
+    margin-top: -114px;
+    margin-left: -5px;
+    width: 110px;
+    height: 115px;
+
+}
 /* Side Block */
-.side {
-    left: 1414px;
-    top: 40px;
-    height: 960px;
-    width: 496px;
+.sideRight {
+    left: 1420px;
+    top: 19px;
+    bottom : 19px;
+    height: 1032px;
+    width: 462px;
     position: absolute;
 }
-.side2 {
-    left: 24px;
-    top: 40px;
-    height: 960px;
-    width: 496px;
-    position: absolute;
-}
-.side3 {
-    left: 62px;
-    top: 300px;
-    height: 960px;
-    width: 496px;
+.sideLeft {
+    left: 15px;
+    top: 19px;
+    bottom : 19px ;
+    height: 1032px;
+    width: 462px;
     position: absolute;
 }
 
+
 /* Commomn Block */
 .asideBlock {
+
     height: 115px;
     width: 416px;
     position: relative;
@@ -200,12 +217,12 @@ html, body {
     height: 115px;
     width: 416px;
     position: relative;
-    margin-left: 45px;
+    margin-left: 5px;
 }
 .asideBlock3 {
     top: 55px;
     height: 115px;
-    width: 450px;
+    width: 416px;
     position: relative;
     margin-left: 45px;
 }
@@ -216,26 +233,9 @@ html, body {
     position: relative;
     margin-left: 45px;
 }
-.asideBlock5 {
-    top: 125px;
-    height: 115px;
-    width: 416px;
-    position: relative;
-}
-.asideBlock6 {
-    top: 185px;
-    height: 115px;
-    width: 416px;
-    position: relative;
-}
-.asideBlock7 {
-    top: 285px;
-    height: 115px;
-    width: 916px;
-    position: relative;
-}
 .asideBlockMini {
-     position: relative;
+    height: 40px;
+    margin-left: 40px;
 }
 /* Pattern 1 - 2 Line */
 .asideBlockPattern1C1 {
@@ -276,14 +276,36 @@ html, body {
     position: absolute;
 }
 
-.minmaxtempTitle {
-    top: 12px;
-        left: -23px;
-    font: 20px museo-sans-300;
-    color: #FFFFFF;
-    position: absolute;
-    float: left;
+
+#tablaClima {   
+    margin-left: 35px;
 }
+
+#tablaClima > tr {    
+    font-family: "b-regular" ;
+    font-size :20px; 
+    color: #FFFFFF; 
+    text-align: center;    
+}
+ 
+ #tablaClima > tr > td {
+    padding-right : 30px;  
+ }
+
+ #tablaClima > tr:nth-child(1) > td:nth-child(1){
+
+    font-family : "b-bold";
+ }
+ #tablaClima > tr:nth-child(2) > td:nth-child(1){
+  font-family : "b-bold";  
+ }
+ #tablaClima > tr:nth-child(3) > td:nth-child(1){
+  font-family : "b-bold";  
+ }
+
+
+
+
 .minmaxtempTitleBorder {
     top: -6px;
     left: -33px;
@@ -291,11 +313,10 @@ html, body {
     position: absolute;
     float: left;
 }
-.minmaxtempTitle tr:first-child td {
-    font-weight: bold;
-    text-align: center;
-}
+
 .minmaxtempTitle td {
+    font-family : "b-regular";
+    font-size: 20px;
     padding: 4px;
     padding-left: 30px;
 }
@@ -327,44 +348,37 @@ html, body {
 }
 
 .NowPlaying1 {
-     margin-left: 200px;
-    top: 21px;
-    font: 22px museo-sans-300;
-    color: #FFFFFF;
-    position: absolute;
-    float: left;
+     
+    
+    font-family: 'b-regular';
+    font-size: 15px;
+    color: #FFFFFF;   
+    
 }
 .NowPlaying2 {
-     margin-left: 200px;
-    top: 47px;
-    float: left;
-    font: 22px museo-sans-300;
+    
+    font-family : 'b-medium';
+    font-size: 18px;
     color: #FFFFFF;
-    position: absolute;
+
+    
 }
 .NowPlaying3{
-     margin-left: 200px;
-    top: 80px;
-    float: left;
-    font: 22px museo-sans-300;
+    
+    font-family: 'b-bold';
+    font-size: 30px;
     color: #FFFFFF;
-    position: absolute;
+    
 }
 .NowPlaying4 {
-     margin-left: 200px;
-    top: 113px;
-    float: left;
-    font: 22px museo-sans-300;
+     font-family: 'b-regular';
+    font-size: 18px;
     color: #FFFFFF;
-    position: absolute;
 }
-.NowPlayingButtons{
-     margin-left: 200px;
-    top: 146px;
-    float: left;
-    font: 36px museo-sans-300;
-    color: #FFFFFF;
-    position: absolute;
+.NowPlayingButtons{   
+    margin-top: 2px;         
+    font-size: 36px;
+    color: #FFFFFF;    
 }
 
 /* Pattern 2 - 3 Line */
@@ -415,58 +429,14 @@ html, body {
 
 /* Pattern 2 - 3 Line */
 .DayPlanBold {
-    font: 24px museo-sans-700;
+    font: 22px museo-sans-300;
     color: #FFFFFF;
     float: left;
 }
 .DayPlanLight {
-    font: 24px museo-sans-300;
+    font: 22px museo-sans-700;
     color: #FFFFFF;
     float: left;
-}
-.DayPlanMedium {
-    font: 24px museo-sans-500;
-    color: #FFFFFF;
-    float: left;
-}.DayPlanRegular {
-    font: 24px museo-sans-400;
-    color: #FFFFFF;
-    float: left;
-}.DayPlanBoldCondensed {
-    font: 24px museo-sans-700_c;
-    color: #FFFFFF;
-    float: left;
-}
-.DayPlanLightCondensed {
-    font: 24px museo-sans-300_c;
-    color: #FFFFFF;
-    float: left;
-}
-.DayPlanMediumCondensed {
-    font: 24px museo-sans-500_c;
-    color: #FFFFFF;
-    float: left;
-}
-.DayPlanMediumCondensedExtra {
-    font: 24px museo-sans-500_c;
-    color: #FFFFFF;
-    float: left;
-}
-.DayPlanBoldAbsolute {
-    font: 24px museo-sans-700;
-    color: #FFFFFF;
-    float: right;
-}
-.DayPlanLightAbsolute {
-    font: 15px museo-sans-300;
-    color: #FFFFFF;
-    float: right;
-}
-.DayPlanMediumAbsolute {
-    font: 24px museo-sans-500;
-    color: #FFFFFF;
-    float: right;
-    
 }
 .DayPlanItem1 {
     top: 47px;
@@ -504,13 +474,17 @@ html, body {
     position: absolute;
 }
 
-.weatherTodayLogo {
-    top: 0px;
-    margin-left: 100px;
-    font: 90px museo-sans-700;
+.weatherTodayLogo {        
+    font-family: 'b-bold-condensed';
+    font-size: 90px;
     color: #FFFFFF;
-    position: absolute;
-    float: left;
+    position: relative;
+    display: inline;
+    margin-left: 15px;    
+}
+.TempMaxMin {
+    display: inline-block;
+    margin-left: 24px;
 }
 
 .weatherTodayType {
@@ -538,40 +512,44 @@ html, body {
     color: #FFFFFF;
     position: absolute;
 }
-.weatherMin {
-    margin-left:320px;
-    top: 20px;
-    float: left;
-    font: 30px museo-sans-300;
-    color: #FFFFFF;
-    position: absolute;
-}
 .weatherMax {
-    margin-left: 320px;
-     margin-top: 60px;
-    top: 0px;
-    float: left;
-    font: 30px museo-sans-300;
+    font-family: "b-regular";
+    font-size: 30px;
     color: #FFFFFF;
-    position: absolute;
+}
+.weatherMin {           
+    font-family: "b-regular";
+    font-size: 30px;
+    color: #FFFFFF;
 }
 
+
+.pictureWeather{
+    margin-top: -69px;
+    margin-left: 25px;
+    height: 80px;
+    width: 95px;
+}
+.Hora{
+    margin-top: -55px;    
+}
+
+
 .weatherMinTable {
-    margin-left:-10px;
-    top: 150px;
+    margin-left:-10px;    
     float: left;
     font: 22px museo-sans-300;
     color: #FFFFFF;
-    position: absolute;
+    position: relative;
 }
 .weatherMaxTable {
     margin-left: -10px;
-     margin-top: 40px;
-    top: 150px;
+    margin-top: 40px;
+    
     float: left;
     font: 22px museo-sans-300;
     color: #FFFFFF;
-    position: absolute;
+    position: relative;
 }
 .weatherToday2 {
     top: 47px;
@@ -597,6 +575,7 @@ html, body {
     color: #FFFFFF;
     position: absolute;
     float: left;
+    display: none;
 }
 .mictext2 {
     margin-left: 140px;
@@ -606,6 +585,7 @@ html, body {
     font: 22px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
+    display: none;
 }
 .mictext3 {
      margin-left: 140px;
@@ -615,6 +595,7 @@ html, body {
     font: 22px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
+    display: none;
 }
 
 .Panel2Content1 {
@@ -643,38 +624,44 @@ html, body {
     font: 22px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
-    float: left;
+    float: left;    
 }
 .clock {
-    top: 30px;
-    font: 122px museo-sans-700_c;
-    color: #FFFFFF;
-    margin-left: -40px;
-    position: absolute;
-    float: right;
+    
+    font-family: "b-bold-condensed";
+    font-size : 115px;
+    color: #FFFFFF;    
+    text-align: right; 
+    padding-top: 35px;  
+
 }
 
-.clockdate {
-    top: 145px;
-    float: right;
-     margin-left: -20px;
-    font: 39px museo-sans-300;
-    color: #FFFFFF;
-    position: absolute;
+.clockdate {   
+    font-family: "b-light";
+    font-size : 39px;
+    color: #FFFFFF; 
+    margin-top: -32px;   
+    margin-left: 15px;
+    text-align: right;
 }
+
 .Panel2Title {
     top: 45px;
     float: left;
     font: 42px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
+    margin-top: 147px;
 }
 .Panel2subtitle {
     top: 87px;
     float: left;
     font: 20 museo-sans-300;
     color: #FFFFFF;
-    position: absolute;
+    position: absolute;    
+    margin-top: 123px;
+    margin-left: 125px;
+
 }
 
 .logonotification {
@@ -726,6 +713,7 @@ html, body {
     color: #FFFFFF;
     position: absolute;
     float: left;
+    margin-top: 121px;
 }
 .notification0 {
   margin-left: 40px;
@@ -733,7 +721,9 @@ html, body {
     font: 22px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
-    float: left;
+    float: left;    
+    margin-top: 122px;
+
 }
 .notification1 {
   margin-left: 40px;
@@ -776,6 +766,7 @@ html, body {
     font: 50px museo-sans-300;
     color: #FFFFFF;
     position: absolute;
+    display: none;
 }
 /* Side Blocks Seperator Line */
 .seperator {
