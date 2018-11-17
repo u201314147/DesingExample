@@ -94,7 +94,7 @@ function calendariolocal()
     })
     .then(function(data) {
         console.log(data.events);
-        
+        console.log(data.labels);
         for(var i=0; i<5; i++) {
            var d = new Date(data.events[i].date);
                 var time = d.toLocaleString("en-US");
@@ -102,32 +102,38 @@ function calendariolocal()
 
           var fecha = conversion;
           var descripcion = data.events[i].desc;
-
+          var correo = data.labels[i].desc;
 
           if(i==0)
           {
            $("#f0").html(fecha);
            $("#c0").html(descripcion);
+            $("#e0").html(correo);
+           
           }
            if(i==1)
           {
           $("#f1").html(fecha);
            $("#c1").html(descripcion);
+              $("#e1").html(correo);
           }
            if(i==2)
           {
           $("#f2").html(fecha);
            $("#c2").html(descripcion);
+              $("#e2").html(correo);
           }
            if(i==3)
           {
           $("#f3").html(fecha);
            $("#c3").html(descripcion);
+              $("#e3").html(correo);
           }
            if(i==4)
           {
           $("#f4").html(fecha);
            $("#c4").html(descripcion);
+              $("#e4").html(correo);
           }
       }
 
