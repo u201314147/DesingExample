@@ -88,7 +88,7 @@ function calendariolocal()
 
   //var listen = setInterval(function() {
 
-  fetch('http://localhost:59788/api/Values')
+  fetch('http://api-mirror.azurewebsites.net/api/Values')
     .then(function(response) {
       return response.json();
     })
@@ -152,7 +152,7 @@ function noti()
 {
          $.ajax({
           method: "GET",
-          url: " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Felcomercio.pe%2Ffeed%2Fpolitica",
+          url: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frpp.pe%2Ffeed%2Fpolitica",
           crossDomain: true,
           dataType: 'jsonp',
 
@@ -166,32 +166,33 @@ function noti()
          
        
             for (var i = 0; i < noticias.length; i++) {
-
-
+              
+                        
               var noti = noticias[i];
               var title = noti.title;
-                var foto = noti.enclosure.link;
-              var desc = noti.description;
-            
+              var foto = noti.enclosure.link;
+               var desc = noti.description;              
+
+              
+              
+         
 
             if(i ==0)
             {  
-             full = full + '<div class="carousel-item active"> <img src="'+ foto +'"style="margin-top: -43px; height: 137px;" /> <label style = "color: white; font-family: "b-medium"; font-size: 20px; margin-left: 200px; display: inline-block; margin-top:-10px;"> ' + title +' </label> <label style = "color: white; font-family: "b-light-condensed"; font-size: 15px; margin-left: 200px; display: inline-block; margin-top:-10px;">'+ desc+' </label> </div>';
+             full = full + '<div class="carousel-item active"> <img src="'+ foto +'" style="height: 230px; width:220px; float:left;" /> <label style ="color: white;display:table;font-size: 20px;margin-left: 234px;margin-top:-6px;font-family: &quot;b-medium&quot;;height: 87px; word-wrap:break-word;"> ' + title +' </label> <label style = "display:block; word-wrap:break-word; color: white; font-family: &quot;b-light-condensed&quot;; margin-left: 234px;margin-top:-7px; height: 100px;">'+ desc+' </label> </div>';
             }
             else
             {
-            full = full + '<div class="carousel-item"> <img src="'+ foto +'"style="margin-top: -43px; height: 137px;" />  <label style = "color: white; font-family: "b-medium"; font-size: 20px; margin-left: 200px; display: inline-block; margin-top:-10px;"> ' + title +' </label> <label style = "color: white; font-family: "b-light-condensed"; font-size: 15px; margin-left: 200px; display: inline-block; margin-top:-10px;">'+ desc+' </label> </div>';
+            full = full + '<div class="carousel-item"> <img src="'+ foto +'" style="height: 230px; width:220px; float:left;" /> <label style ="color: white;display:table;font-size: 20px;margin-left: 234px;margin-top:-6px;font-family: &quot;b-medium&quot;; height: 87px; word-wrap:break-word;"> ' + title +' </label> <label style = "display:block; color: white; font-family: &quot;b-light-condensed&quot;; margin-left: 234px;margin-top:-7px; height: 100px; word-wrap:break-word;">'+ desc+' </label> </div>';
           
             }
 
 
           }
-         //  console.log(foto);
-         //  console.log(full);
-          $("#333").html('<div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> <div class="carousel-inner">'+ full + '</div> <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span"> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>'
-
-
-            )
+           console.log(foto);
+           console.log(full);
+          $("#333").html('<div id="carouselExampleControls" style="margin-left: 25px;" class="carousel slide" data-ride="carousel"> <div class="carousel-inner">'+ full + '</div> <a class="hidden carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span"> <span class="sr-only">Previous</span> </a> <a class="hidden carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>')
+          $('.carousel').carousel({  interval: 3000  });
       }); 
 
 }
@@ -341,7 +342,11 @@ info.set('asideBlock1Content3', dateDay);
 
   //  info.set('asideBlock1Content3', jsonData.asideBlock1Content3);
 
- window.setInterval(updateTime,100);
+ window.setInterval(updateTime,60000);
+ window.setInterval(updateTime,1800000);
+window.setInterval(calendariolocal,10000);
+
+
         $.ajax({
           method: "GET",
           url: "https://api.darksky.net/forecast/7af51a01e29c8ddb7a548fad3cf35a05/-12.193731,-76.708493?units=si",
