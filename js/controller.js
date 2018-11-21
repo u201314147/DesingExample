@@ -41,7 +41,7 @@ function init()
 }
 
      function countdown(fechaevento){
-   var fecha = new Date();
+   /*var fecha = new Date();
    fecha = fechaevento;
     var hoy=new Date()
     var dias=0
@@ -59,11 +59,9 @@ function init()
         minutos=Math.floor(diferencia/60)
         diferencia=diferencia-(60*minutos)
         segundos=Math.floor(diferencia)
-
       
       console.log(hoy + "-" +fechaevento);
       var fecha = ""
-
 
       if(segundos> 0)
         fecha = 'En '+ segundos + ' segundos ';
@@ -78,9 +76,8 @@ function init()
           }
         if(dias> 0)
         fecha = 'En '+ dias + ' Dias ';
-          
+          */
         return fecha;
-
     
 }
 function calendariolocal()
@@ -88,7 +85,7 @@ function calendariolocal()
 
   //var listen = setInterval(function() {
 
-  fetch('http://api-mirror.azurewebsites.net/api/Values')
+  fetch('http://localhost:59788/api/Values')
     .then(function(response) {
       return response.json();
     })
@@ -96,11 +93,11 @@ function calendariolocal()
         console.log(data.events);
         console.log(data.labels);
         for(var i=0; i<5; i++) {
-           var d = new Date(data.events[i].date);
-                var time = d.toLocaleString("en-US");
-                 var conversion = countdown(time);
+       //    var d = new Date(data.events[i].date);
+       //         var time = d.toLocaleString("en-US");
+      //           var conversion = countdown(time);
 
-          var fecha = conversion;
+          var fecha = data.events[i].date;
           var descripcion = data.events[i].desc;
           var correo = data.labels[i].desc;
 
