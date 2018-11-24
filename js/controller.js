@@ -59,9 +59,11 @@ function init()
         minutos=Math.floor(diferencia/60)
         diferencia=diferencia-(60*minutos)
         segundos=Math.floor(diferencia)
+
       
       console.log(hoy + "-" +fechaevento);
       var fecha = ""
+
 
       if(segundos> 0)
         fecha = 'En '+ segundos + ' segundos ';
@@ -76,8 +78,9 @@ function init()
           }
         if(dias> 0)
         fecha = 'En '+ dias + ' Dias ';
-          */
+      */    
         return fecha;
+
     
 }
 function calendariolocal()
@@ -85,7 +88,7 @@ function calendariolocal()
 
   //var listen = setInterval(function() {
 
-  fetch('http://localhost:59788/api/Values')
+  fetch('http://api-mirror.azurewebsites.net/api/Values')
     .then(function(response) {
       return response.json();
     })
@@ -93,44 +96,73 @@ function calendariolocal()
         console.log(data.events);
         console.log(data.labels);
         for(var i=0; i<5; i++) {
-       //    var d = new Date(data.events[i].date);
-       //         var time = d.toLocaleString("en-US");
-      //           var conversion = countdown(time);
+        //   var d = new Date(data.events[i].date);
+         //       var time = d.toLocaleString("en-US");
+         //        var conversion = countdown(time);
 
           var fecha = data.events[i].date;
           var descripcion = data.events[i].desc;
           var correo = data.labels[i].desc;
+          var correo2 = data.labels[i].from;
+            var correo3 = data.labels[i].date;
+            var correo4 = data.labels[i].subject;
 
           if(i==0)
           {
            $("#f0").html(fecha);
            $("#c0").html(descripcion);
-            $("#e0").html(correo);
+            //$("#e0").html(correo);
+
+            $("#ci11").html(correo4);
+             $("#ci12").html(correo2);
+             $("#ci13").html(correo3);
+             $("#ci14").html(correo);
            
           }
            if(i==1)
           {
           $("#f1").html(fecha);
            $("#c1").html(descripcion);
-              $("#e1").html(correo);
+           //   $("#e1").html(correo);
+
+           
+               $("#ci21").html(correo4);
+             $("#ci22").html(correo2);
+             $("#ci23").html(correo3);
+             $("#ci24").html(correo);
+           
           }
            if(i==2)
           {
           $("#f2").html(fecha);
            $("#c2").html(descripcion);
-              $("#e2").html(correo);
+         //     $("#e2").html(correo);
+
+           $("#ci31").html(correo4);
+             $("#ci32").html(correo2);
+             $("#ci33").html(correo3);
+             $("#ci34").html(correo);
           }
            if(i==3)
           {
           $("#f3").html(fecha);
            $("#c3").html(descripcion);
-              $("#e3").html(correo);
+          //    $("#e3").html(correo);
+
+            $("#ci41").html(correo4);
+             $("#ci42").html(correo2);
+             $("#ci43").html(correo3);
+             $("#ci44").html(correo);
+           
+           
           }
            if(i==4)
           {
           $("#f4").html(fecha);
            $("#c4").html(descripcion);
-              $("#e4").html(correo);
+             // $("#e4").html(correo);
+
+              
           }
       }
 
@@ -616,4 +648,7 @@ $("#logoClima").html(html2);
     }
     /** @function */
     loadDoc('GET', 'data/data.json');
+    
+
+
 }());

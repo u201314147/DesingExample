@@ -641,8 +641,8 @@
     font-size : 39px;
     color: #FFFFFF; 
     margin-top: -32px;   
-    margin-left: 15px;
-    text-align: right;
+    margin-left: 1px;
+    text-align: left;
 }
 
 .Panel2Title {
